@@ -1,0 +1,728 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"U",
+				"UserSchema"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "\n50€ (fixe + movil)\n\n10\n\n10\n\n70€\n\n\n\n\n40€\n\n13e\n\n\n31+9-13=26\n\n40\n\n\n203 663 191\n\n\n",
+			"settings":
+			{
+				"buffer_size": 79,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "proyecto-curso.sublime-project",
+			"settings":
+			{
+				"buffer_size": 45,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "'use strict'\n\nvar moongose = require('mongoose');\n\nvar Schema = mongoose.Schema;\n\nvar  UserSchema = Schema({\n\tname: String,\n\tsurname: String,\n\temail: String,\n\tpassword:String,\n\trole: String,\n\timagen:String;\n})\n\nmodule.exports = mongoose.model('User',UserSchema); \n",
+			"file": "models/user.js",
+			"file_size": 263,
+			"file_write_time": 132072690278629962,
+			"settings":
+			{
+				"buffer_size": 264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "'use strict'\n\nvar moongose = require('mongoose');\n\nvar Schema = mongoose.Schema;\n\nvar  ArtistSchema = Schema({\n\tname: String,\n\tdescripction: String,\n\timagen:String;\n})\n\nmodule.exports = mongoose.model('Artist',ArtistSchema); \n\n",
+			"file": "models/artist.js",
+			"file_size": 227,
+			"file_write_time": 132072692084515616,
+			"settings":
+			{
+				"buffer_size": 227,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/album.js",
+			"settings":
+			{
+				"buffer_size": 281,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "'use strict'\n\nfunction pruebas(req,res){\n\tres.status(200).send({\n\t\tmessage:'Prboandouna acción del controlador de usuarios del api de rest con node y mongo'\n\t});\n}\n\nfunction \n\nmodule.exports = {\n\npruebas\n\n};",
+			"file": "controllers/user.js",
+			"file_size": 197,
+			"file_write_time": 132073533618830613,
+			"settings":
+			{
+				"buffer_size": 207,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/song.js",
+			"settings":
+			{
+				"buffer_size": 259,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/user.js",
+			"settings":
+			{
+				"buffer_size": 206,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "'use strict'"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nSublimeLinter-jshint\n--------------------\n\n  SublimeLinter-jshint\n  -------------------------------\n  This linter plugin for SublimeLinter provides an interface to jshint.\n  \n  Please read the installation instructions at:\n  \n  https://github.com/SublimeLinter/SublimeLinter-jshint\n\n\nCSSLint\n-------\n\n  CSSLint for Sublime Text\n  ========================\n  \n  Thanks for downloading this plugin! For information on how to use it, please\n  refer to the readme: \n  \n  https://github.com/austinhappel/sublime-csslint/blob/master/README.md\n\n\nSublimeLinter\n-------------\n\n  \n    ____        _     _ _                _     _       _\n   / ___| _   _| |__ | (_)_ __ ___   ___| |   (_)_ __ | |_ ___ _ __\n   \\___ \\| | | | '_ \\| | | '_ ` _ \\ / _ \\ |   | | '_ \\| __/ _ \\ '__|\n    ___) | |_| | |_) | | | | | | | |  __/ |___| | | | | ||  __/ |\n   |____/ \\__,_|_.__/|_|_|_| |_| |_|\\___|_____|_|_| |_|\\__\\___|_|\n  \n  \n  Welcome to SublimeLinter, a linter framework for Sublime Text 3.\n  Linters are not included, they must be installed separately.\n  \n  \n  For complete documentation on how to use and configure SublimeLinter,\n  please see: http://www.sublimelinter.com\n  \n  To report issues: https://github.com/SublimeLinter/SublimeLinter\n",
+			"settings":
+			{
+				"buffer_size": 1274,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 611,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 471,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "'use strict'"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/angel/curso",
+		"/home/angel/curso/controllers",
+		"/home/angel/curso/models",
+		"/home/angel/curso/routes"
+	],
+	"file_history":
+	[
+		"/home/angel/curso/package.json",
+		"/home/angel/.config/sublime-text-3/Packages/CSSLint/CSSLint.sublime-settings",
+		"/tmp/fz3temp-2/style.css",
+		"/home/angel/Escritorio/prova.html",
+		"/tmp/fz3temp-2/wp-config.php",
+		"/tmp/fz3temp-2/header.php",
+		"/home/angel/Escritorio/prova.css",
+		"/home/angel/littlebox/gzmtv9zjjcvat91r/themes/default/template/controllers/orders/_customized_data.tpl",
+		"/tmp/fz3temp-2/_customized_data.tpl",
+		"/tmp/fz3temp-2/functions.php",
+		"/home/angel/Descargas/themeforest-7315054-bridge-creative-multipurpose-wordpress-theme/bridge-child/functions.php",
+		"/home/angel/telicshop.com/settings.inc.php",
+		"/home/angel/telicshop.com/config/settings.inc.php",
+		"/tmp/fz3temp-2/error_log",
+		"/etc/transmission-daemon/settings.json",
+		"/tmp/fz3temp-2/settings.inc.php",
+		"/home/angel/telicshop.com/config/config.inc.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"/home/angel/littlebox/gzmtv9zjjcvat91r/"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"-->",
+			"col-lg-12",
+			"orm-group",
+			"ol-lg",
+			"bolsita"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 79,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.13.region_keys":
+							[
+							],
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "proyecto-curso.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "models/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "models/artist.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								227,
+								227
+							]
+						],
+						"settings":
+						{
+							"SL.19.region_keys":
+							[
+							],
+							"spell_check": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "models/album.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+								"SL.jshint.Highlights.|b154ce0addbcced7f6acffbec77befd32361098d7c2004d60f4d5607267a8846|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|a76cef297123b7dfa432deeb9d133dccc89c9130d6382eebcf1f7105fcf3bb52|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|cc8b0d00550305133e80ae70682b84308381aff0086556d4f7feeb0d93ec6e26|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|665bf04ca86f6c45f6e01756f8ed2de417dfec5d27226f7ad21bfeefb02d4ddb|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.jshint.Highlights.|22d61091762f772935a86e205a225fb110ba53645e4d08b91f16fa39865734cd|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|9ca6a6104b2760bc70f744676bfc4795ed26deb87285db6fe62f263f1f149194|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"SL.20.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "controllers/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								174,
+								174
+							]
+						],
+						"settings":
+						{
+							"SL.24.region_keys":
+							[
+								"SL.jshint.Highlights.|bcdce52d6cf8b3548d019b34a6b819530feb187e78e287874b37c9b33f3f362d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.jshint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.jshint.Highlights.|198a2510aa5b951a5e6e1c42c26c005651d74233e621848dda2bb6c9c312ee6a|region.redish markup.error.sublime_linter|32",
+								"SL.jshint.Highlights.|56b0be48058ff6c62bf53d2de0ee026044ec36f9fa419d00495417a8649c044d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|bd263f219e7efc0f6639e63d2d37799aecf9897dd0db79078acd794a344f3105|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|3e524dfa8df4d97aa3285216fbe25ce526d27629024906d45078c7c6cecadf84|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|1910d7b5ef7d4a894df954e3765aba4c84d3b2d03c54166bee9de6e9077dc523|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "models/song.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+								"SL.jshint.Highlights.|d858d164e37ef33bb1985006623f3dc98b6b1bda0d715e67fbd99d938c5ac578|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|0162988775be379086badcb8c413fc04cc0ecf121f80a4a77c59bc6c9ceb0a2b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|6c83f2eb792cd8dfab0f507c6d5c6496c1fa51195f9b72bed2f8167e64b3c6f1|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|acff5cda0334540f2b54e0698347c581fcc1387768d149d39a9df64b08b8585a|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|fd098b1d1e88fdfb85759b99b6de632462892c4eb61831d037bd840f37d148e9|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|476077d7eb3bfe2840ed91a7161e6a7f0e6e00fb5d8f6bb8d9b131197981f22c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"sublime_linter.protected_regions"
+							],
+							"SL.45.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "routes/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 206,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"SL.25.region_keys":
+							[
+								"SL.jshint.Highlights.|e0419fb0b2bd383006f28aeeba1257880a365ca40c4406b699fdcd2ad4a00fad|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|3639d9566b93723a04beb7c4ed868ae19d495843c45daa81f6bd847e2c604c46|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|1edbaaed2266d9a86460a8bf3f41dc54b832fc1b9b34da830e0eccbcd3eeae60|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.jshint.Highlights.|671ea277172d9ff059583dcc368a403f2e5119cf46715e74a6571553007a532b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|d140dd1550dcacb9663f2b6870ed17049546f723a1a37cc3c74e09341efb533d|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"auto_name": "'use strict'",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"SL.27.region_keys":
+							[
+							],
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								584,
+								584
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								432,
+								432
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+							],
+							"SL.21.region_keys":
+							[
+								"SL.jshint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.jshint.Highlights.|0ee858507f41122af5e578d69a2d65aebd6af35c81e8dfe3c1f9a62b8d5a5f26|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|6f1f248a0640a7b0f3e93e481f824025612c0b2ab54c1b277f4ce36db81b0028|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|cc5b588d2f1c081a3db5e12443c4f9d4137b13f45a2b9e67951412e563619df3|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|ede1fd5c77baa5435e5307d5e0e5e34f938f230a4061bf6bedc560983fbed353|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|e46c172a4736738f9588443f06d746b8c64253227a9644bebe8bb6b5fb80db42|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|ee18099cf6808b3bedd0562e47ce29e7906581d0e3c4008cbb8ff7b045ba8283|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"auto_name": "'use strict'",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 121.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.nodejs":
+	{
+		"height": 121.0
+	},
+	"pinned_build_system": "",
+	"project": "proyecto-curso.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
