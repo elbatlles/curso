@@ -6,7 +6,7 @@ var User = require("../models/user");
 
 function pruebas(req,res){
 	res.status(200).send({
-		message:'Prboandouna acción del controlador de usuarios del api de rest con node y mongo'
+		message:'Probando acción del controlador de usuarios del api de rest con node y mongo'
 	});
 }
 
@@ -45,9 +45,9 @@ function saveUser(req,res){
 			console.log(user);
 			if(user.name!=null && user.surname !=null && user.email !=null){
 				//guaradr usuario
-				console.log("anem a guardar el usuari");
+				
 			//	user.save();
-				console.log("avee");
+			
 				
 			/*	user.save((err,userStored) => {
 					console.log("ss");
