@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var app = require('./app');
 var port = process.env.PORT || 3977;
-var url="mongodb://localhost:27017/curso";
+var url="mongodb://127.0.0.1:27017/curso";
 
 var MongoClient = require('mongodb').MongoClient;
 

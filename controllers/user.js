@@ -11,7 +11,21 @@ function pruebas(req,res){
 }
 
 function saveUser(req,res){
-	var user = new User("hola","hola","hola","hola","hola","hola");
+	var user = new User(
+		{"name":"Prueba",
+		"surname":"Prueba"}
+	);
+	user.save(function(err, userObj) {
+		if (err) {
+			res.status(200).send({message:"Error"});
+		}
+
+	//	res.json({ "success": true, "msg": "user created" });
+		res.status(200).send({message:"ok"});
+	 });
+
+ 
+
 
 	
 	var params = req.body;
@@ -22,11 +36,7 @@ function saveUser(req,res){
 	user.role='ROLE_ADMIN';
 	user.imagen='null';
 
-	user.save(function (err, userdins) {
-		if (err) return console.error(err);
-		console.log("estem a dinsss???");
-		console.log(userdins);
-	  });
+	 
 
 	if(false){
 		console.log("enrem 1");
@@ -77,9 +87,47 @@ function saveUser(req,res){
 	//console.log(userStored);
 }
 
+
+function loginUser(req,res){
+	var  params = req.body;
+
+	var email = params.email;
+	var password = params.password;
+
+	User.findOne({email:email.toLowerCase()}, (err,user) => {
+		 	if(err){
+				res.status(500).send({message:"no encontrado"});
+			}else{
+				if(!user){
+					res.status(500).send({message:"El usuari no existe"});
+				}else{
+					//comprobar paswd
+					brcypt.compare(password,user.password, function(err,check){
+						if(check){
+								if(params.gethash){
+
+									// devolver un token de jtw
+								}else{
+									res.status(200).send({user});
+								}
+							//Devolver datos usuario
+						}else{
+							res.status(404).send({message:"El usuari  no ha podido loguearse"});
+						}
+					});
+				}  
+			}
+	});
+	
+}
+	
+
+
+
 module.exports = {
 
 pruebas,
-saveUser
+saveUser,
+loginUser
 
 };
