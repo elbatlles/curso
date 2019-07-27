@@ -23,7 +23,7 @@ function saveUser(req,res){
 	//	res.json({ "success": true, "msg": "user created" });
 		res.status(200).send({message:"ok"});
 	 });
-
+	 console.log(user);
  
 
 
