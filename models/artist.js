@@ -1,13 +1,13 @@
 'use strict'
 
-var moongose = require('mongoose');
+var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
 var  ArtistSchema = Schema({
 	name: String,
 	descripction: String,
-	imagen:String;
+	imagen:String
 })
 
 module.exports = mongoose.model('Artist',ArtistSchema); 

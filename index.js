@@ -21,7 +21,7 @@ MongoClient.connect(url,{ useNewUrlParser: true },function(err,db){
   else {
       console.log('connected to '+ url);
       app.listen(port,function(){
-            console.log("holii");
+            console.log("Funcionando");
       });
       //db.close();
   }
