@@ -168,7 +168,7 @@ function uploadImage(req,res){
 
 		if(file_ext =="png" || file_ext =="gif" || file_ext =="jpg"){
 			console.log("arxiu aceptat");
-			User.findByIdAndUpdate(userId,{imagen:file_name}, (err,userUpdated) => {
+			User.findByIdAndUpdate(userId,{image:file_name}, (err,userUpdated) => {
 				if(err){
 					res.status(500).send({message:"Error al actualizar el usuario"});
 							
