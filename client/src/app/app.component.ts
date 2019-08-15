@@ -14,9 +14,11 @@ export class AppComponent implements OnInit {
  public identity;
  public token;
  public errorMensaje;
+ public user_register: User;
 
 constructor(private _userService: UserServices){
   this.user = new User('','','','','','ROLE_USER','');
+  this.user_register = new User('','','','','','ROLE_USER','');
 }
   ngOnInit(){
     this.identity = this._userService.getIdentity();
@@ -62,7 +64,7 @@ public onSubmit(){
               var body = JSON.parse(error._body);
               this.errorMensaje = body.message;
               console.log(error);
-              console.log("batlless?");
+             
             }
           }
        );
@@ -77,9 +79,21 @@ public onSubmit(){
         var body = JSON.parse(error._body);
         this.errorMensaje = body.message;
         console.log(error);
-        console.log("batlless?");
+       
       }
     }
  );
+}
+
+logout(){
+  localStorage.removeItem('identity');
+  localStorage.removeItem('token');
+  localStorage.clear();
+  this.identity=null;
+  this.token=null;
+}
+
+onSubmitRegister(){
+  console.log(this.user_register);
 }
 }
