@@ -96,9 +96,7 @@ function loginUser(req,res){
 
 	var email = params.email;
 	var password = params.password;
-	console.log(email);
-	console.log(password);
-	console.log(params);
+
 
 	//User.findOne({email:email.toLowerCase()}, (err,user) => {
 		User.findOne({email:email}, (err,user) => {
