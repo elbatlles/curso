@@ -179,7 +179,7 @@ function uploadImage(req,res){
 							
 					}else{
 						console.log("todo correcto");
-						res.status(200).send({user:userUpdated});
+						res.status(200).send({image:file_name,user:userUpdated});
 							
 					}
 				
