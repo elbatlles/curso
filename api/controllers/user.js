@@ -96,8 +96,13 @@ function loginUser(req,res){
 
 	var email = params.email;
 	var password = params.password;
+	console.log(email);
+	console.log(password);
+	console.log(params);
 
-	User.findOne({email:email.toLowerCase()}, (err,user) => {
+	//User.findOne({email:email.toLowerCase()}, (err,user) => {
+		User.findOne({email:email}, (err,user) => {
+	
 		 	if(err){
 				res.status(500).send({message:"no encontrado"});
 			}else{
@@ -106,7 +111,9 @@ function loginUser(req,res){
 				}else{
 					//comprobar paswd
 					brcypt.compare(password,user.password, function(err,check){
+						
 						if(check){
+							
 								if(params.gethash){
 
 									// devolver un token de jtw
