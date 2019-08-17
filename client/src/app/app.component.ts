@@ -1,12 +1,12 @@
 import { Component,OnInit } from '@angular/core';
-import { User } from './models/user';
-import {  UserServices } from './services/user.services';
+import { User } from '../../models/user';
+import {  UserService } from './services/user.service';
 import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  providers: [UserServices]
+  providers: [UserService]
 })
 export class AppComponent implements OnInit {
  public  title = 'MUSIFY';
@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
  public token;
  public errorMensaje;
  public user_register: User;
-
-constructor(private _userService: UserServices){
+ public alertRegister;
+constructor(private _userService: UserService){
   this.user = new User('','','','','','ROLE_USER','');
   this.user_register = new User('','','','','','ROLE_USER','');
 }
@@ -28,7 +28,7 @@ constructor(private _userService: UserServices){
     console.log(this.token);
   }
 
-public onSubmit(){
+ onSubmit(){
   //Conseguir los datos del usuario identificado
   this._userService.singup(this.user).subscribe(
     response =>{
@@ -53,6 +53,7 @@ public onSubmit(){
                 console.log(token);
                 console.log(identity);
                 localStorage.setItem('token',token);
+                this.user = new User('','','','','','ROLE_USER','');
               //Conseguir el token para enviarselo a cada peticion
             }
             
@@ -93,7 +94,30 @@ logout(){
   this.token=null;
 }
 
+
 onSubmitRegister(){
   console.log(this.user_register);
+  this._userService.register(this.user_register).subscribe(
+    response =>{
+        let user = response.user;
+        this.user_register = user;
+        if(!user._id){
+          this.alertRegister = "Error al registrarse";
+        }else{
+          this.alertRegister = "EL registro se a ha realizado correctamente, identificate con"+this.user_register.email;
+          this.user_register = new User('','','','','','ROLE_USER','');
+        }
+    },
+    error => {
+      var errorMensaje = <any>error;
+      
+      if(errorMensaje !=null){
+        var body = JSON.parse(error._body);
+        this.alertRegister = body.message;
+        console.log(error);
+       
+      }
+    }
+  )
 }
 }

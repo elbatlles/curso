@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import { GLOBAL } from './global';
 @Injectable()
-export class UserServices{
+export class UserService{
     public url: string;
     public identity: string;
     public token: string;
@@ -22,10 +22,31 @@ export class UserServices{
         console.log(params);
         let headers = new Headers({'Content-Type':'application/json'});
 
-        return this._http.post(this.url+'login',params,{headers})
+        return this._http.post(this.url+'login',params,{headers:headers})
         .map(res=> res.json());
     }
 
+    register(user_to_register) {
+        let json = JSON.stringify(user_to_register);
+        let params = json;
+        console.log(params);
+        let headers = new Headers({'Content-Type':'application/json'});
+
+        return this._http.post(this.url+'register',params,{headers:headers})
+        .map(res=> res.json());
+    }
+
+    update_user(user_to_update){
+        let json = JSON.stringify(user_to_update);
+        let params = json;
+        console.log(params);
+        let headers = new Headers({'Content-Type':'application/json',
+        'Autorization':this.getToken() });
+
+        return this._http.put(this.url+'update-iser/'+user_to_update._id,params,{headers:headers})
+        .map(res=> res.json()); 
+    }
+    
     getIdentity(){
         let identity = JSON.parse(localStorage.getItem('identity'));
         console.log(identity);

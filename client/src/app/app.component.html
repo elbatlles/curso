@@ -2,19 +2,42 @@
   <h1>
     {{title}}
   </h1>
-  <span>
-    {{identity.name}} {{identity.surname}}
-  </span>
+  <nav id="navigation">
+      <span>
+          {{identity.name}} {{identity.surname}}
+        </span>
+        <span class="btn btn-warning" (click)="logout()">
+            Cerrar sesión
+          </span>
+  </nav>
+  <nav id="user_logged">
+      <span>
+          {{identity.name}} 
+        </span>
+        <a href="#">
+        <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+            Buscar
+         
+        </a>
+          <a href="#">
+            <span class="glyphicon  glyphicon-star" aria-hidden="true"></span>
+             Artistas
+          </a>
+          <a href="#">
+              <span class="glyphicon  glyphicon-book" aria-hidden="true"></span>
+              Albums
+          </a>
+           
+  </nav>
 
-  <span class="btn btn-warning" (click)="logout()">
-    Cerrar sessión
-  </span>
+
 </div>
 <div class="clearfix"> </div>
 
 <div *ngIf="identity" class=" central col-lg-1">
 
-  <p>Estas logeado en la aplicación </p>  
+  <p>Estas logeado en la aplicación </p> 
+  <user-edit></user-edit> 
 
 </div>
 <div class="container-fluid">
@@ -45,6 +68,11 @@
   </div>  
   <div class="col-lg-6"> 
       <h1> Registrate</h1>
+      <div *ngIf="alertRegister">
+          <div class="alert alert-info" role="alert">
+            Error mensaje {{alertRegister}}
+            </div>
+         </div>
       <form #registerForm="ngForm" (ngSubmit)="onSubmitRegister()" class="col-md-10">
           <p>
               <label>Nombre</label>

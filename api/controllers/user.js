@@ -34,7 +34,7 @@ console.log(params);
 	user.surname= params.surname;
 	user.email= params.email;
 	user.password= params.password;
-	user.role='ROLE_ADMIN';
+	user.role=params.role;
 	user.imagen='null';
 
 	 
@@ -109,7 +109,8 @@ function loginUser(req,res){
 				}else{
 					//comprobar paswd
 					brcypt.compare(password,user.password, function(err,check){
-						
+						console.log(password);
+						console.log(user.password);
 						if(check){
 							
 								if(params.gethash){
