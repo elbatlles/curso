@@ -1,4 +1,4 @@
-<div *ngIf="identity" class="navigation col-lg-1">
+<div *ngIf="identity" class="navigation col-lg-3">
   <h1>
     {{title}}
   </h1>
@@ -6,25 +6,31 @@
       <span>
           {{identity.name}} {{identity.surname}}
         </span>
-        <span class="btn btn-warning" (click)="logout()">
-            Cerrar sesión
-          </span>
+ 
   </nav>
   <nav id="user_logged">
       <span>
           {{identity.name}} 
         </span>
+        <span class="btn btn-warning" (click)="logout()">
+          Cerrar sesión
+        </span>
+      <a [routerLink]="[ '/misdatos']">
+          <span class="fas fa-search"></span>
+             Mis datos
+           
+          </a>
         <a href="#">
-        <span class="glyphicon  glyphicon-search" aria-hidden="true"></span>
+        <span class="fas fa-search"></span>
             Buscar
          
         </a>
           <a href="#">
-            <span class="glyphicon  glyphicon-star" aria-hidden="true"></span>
+            <span class="fas fa-star" aria-hidden="true"></span>
              Artistas
           </a>
           <a href="#">
-              <span class="glyphicon  glyphicon-book" aria-hidden="true"></span>
+              <span class="fas fa-book" aria-hidden="true"></span>
               Albums
           </a>
            
@@ -37,7 +43,8 @@
 <div *ngIf="identity" class=" central col-lg-1">
 
   <p>Estas logeado en la aplicación </p> 
-  <user-edit></user-edit> 
+  <router-outlet></router-outlet>
+  
 
 </div>
 <div class="container-fluid">
