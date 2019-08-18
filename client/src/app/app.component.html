@@ -9,7 +9,7 @@
  
   </nav>
   <nav id="user_logged">
-      <span>
+      <span id="identity_name">
           {{identity.name}} 
         </span>
         <span class="btn btn-warning" (click)="logout()">
@@ -19,7 +19,7 @@
           <span class="fas fa-search"></span>
              Mis datos
            
-          </a>
+          </a> 
         <a href="#">
         <span class="fas fa-search"></span>
             Buscar
@@ -40,7 +40,7 @@
 </div>
 <div class="clearfix"> </div>
 
-<div *ngIf="identity" class=" central col-lg-1">
+<div *ngIf="identity" class=" central col-lg-6">
 
   <p>Estas logeado en la aplicación </p> 
   <router-outlet></router-outlet>

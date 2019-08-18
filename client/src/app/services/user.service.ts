@@ -36,14 +36,14 @@ export class UserService{
         .map(res=> res.json());
     }
 
-    update_user(user_to_update){
+    updateUser(user_to_update){
         let json = JSON.stringify(user_to_update);
         let params = json;
         console.log(params);
         let headers = new Headers({'Content-Type':'application/json',
-        'Autorization':this.getToken() });
+        'Authorization':this.getToken() });
 
-        return this._http.put(this.url+'update-iser/'+user_to_update._id,params,{headers:headers})
+        return this._http.put(this.url+'update-user/'+user_to_update._id,params,{headers:headers})
         .map(res=> res.json()); 
     }
     
