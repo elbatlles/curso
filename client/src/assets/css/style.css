@@ -1,6 +1,68 @@
-body {
-    /*background: grey!important;*/
+body,html {
+   margin: 0px;
+
+   background: #eee;
+   height: 100%;
 }
 .col-lg-6 h1 {
     text-align: center;
+}
+.actived{
+    border-bottom: 4px solid #84BD00;
+}
+.head-title{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom:25px;
+    display: block; 
+}
+.navigation{
+    text-align: center;
+    color: white;
+    background: #1c1c1F;
+    height: 100%;
+}
+.navigation a{
+    color: #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-decoration: none;
+}
+.navigation a:hover{
+    color:white;
+}
+
+.navigation .fas{
+    font-size: 25px;
+    display: block;
+    width: 100%;
+}
+#user_logged{
+    background: #1c1c1F;
+    position: absolute;
+    bottom: 0px;
+    border-top: 1px solid #444;
+    width: 75%;
+    text-align: center;
+}
+#user_logged .fa-sign-out-alt{
+    font-size: 16px;
+}
+.btn-logout{
+    cursor: pointer;
+}
+#user_logged .user-image{
+    background: #eee;
+    border-radius: 100px;
+    height: 57px;
+    width: 57px;
+    margin: 0px auto;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#user_logged .user-image img{
+ width: 57px;
 }
