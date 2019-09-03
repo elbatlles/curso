@@ -1,5 +1,11 @@
+<div class="col-lg-8">
 <h1>{{titulo}}</h1>
-<form #formArtist="ngForm" (ngSubmit)="onSubmit()" class="col-lg-8">
+<div *ngIf="alertMessage">
+        <div class="alert alert-info" role="alert">
+           {{alertMessage}}
+          </div>
+       </div> angll
+<form #formArtist="ngForm" (ngSubmit)="onSubmit()" >
         <p>
             <label>Nombre</label>
             <input class="form-control" required type="text" #name="ngModel" name="name" [(ngModel)]="artist.name">
@@ -13,8 +19,16 @@
                 <span *ngIf="!description.valid && description.touched">
                       La descripción es obligatoria
                      </span>
-             </p>   
+             </p> 
+             <div  *ngIf="is_edit" class="">
+                <div class="image_for_edit" *ngIf="artist.image && artist.image !='null'">
+                  <img src="{{url+ 'get-image-artist/'+artist.image}}" />
+                </div>
+                <p><label>Sube la imagen del artista</label>
+               </p> <input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)">
+             </div>  
         
         
         <input class="btn btn-success" type="submit" value="{{titulo}}" [disabled]="!formArtist.form.valid">
     </form>
+</div>    

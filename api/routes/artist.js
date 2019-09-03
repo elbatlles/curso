@@ -9,7 +9,7 @@ var md_upload = multipart({uploadDir: './uploads/artists'});
 
 api.get('/artist/:id',md_auth.ensureAuth, ArtistController.getArtist);
 
-api.post('/artists',md_auth.ensureAuth, ArtistController.saveArtist);
+api.post('/artist',md_auth.ensureAuth, ArtistController.saveArtist);
 
 api.get('/artists/:page?',md_auth.ensureAuth, ArtistController.getArtists);
 

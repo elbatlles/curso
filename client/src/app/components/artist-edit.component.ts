@@ -6,18 +6,19 @@ import {UserService} from '../services/user.service';
 import {ArtistService} from '../services/artist.service';
 import {Artist} from '../models/artist';
 @Component({
-    selector:'artist-add',
+    selector:'artist-edit',
     templateUrl: '../views/artist-add.html',
     providers:[UserService,ArtistService]
 })
 
-export class ArtistAddComponent implements OnInit{
+export class ArtistEditComponent implements OnInit{
     public titulo: string;
     public artist: Artist;
     public identity;
     public token;
     public url: string;
     public alertMessage;
+    public is_edit;
 
     constructor(
         private _route: ActivatedRoute,
@@ -25,26 +26,60 @@ export class ArtistAddComponent implements OnInit{
         private _userService:UserService,
         private _artistService:ArtistService
     ){
-        this.titulo="Crear nuevo Artistas";
+        this.titulo="Modificar artista";
         this.identity=this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;
+        this.is_edit =true;
         this.artist = new Artist('','','');
     }
     ngOnInit(){
-        console.log("Cargando Artist  ss ADD");
+        console.log("Cargando Artist EDIT");
+        //Llamar al metodo del api para sacar un artista a un artista en base de su id getartist
        
      //GET list artists
+
+     this.getArtist();
+    }
+
+    getArtist(){
+        this._route.params.forEach((params :Params)=> {
+            let id= params['id'];
+            this._artistService.getArtist(this.token,id).subscribe(
+                response =>{
+                   
+                    if(!response.artist){
+                        this._router.navigate(['/'])
+                    }else{
+                        this.artist = response.artist;
+                    }
+                },
+                error => {
+                    var errorMensaje = <any>error;
+                    
+                    if(errorMensaje !=null){
+                      var body = JSON.parse(error._body);
+                     // this.alertMessage = body.message;
+                      console.log(error);
+                     
+                    }
+                  }
+            );
+        });
     }
     onSubmit(){
-        this._artistService.addArtist(this.token,this.artist).subscribe(
+        console.log("pasem?");
+        this._route.params.forEach((params :Params)=> {
+            let id= params['id'];
+       
+        this._artistService.editArtist(this.token,id,this.artist).subscribe(
             response =>{
               
                 if(!response.artist){
                     this.alertMessage="Error en el servidor";
                 }else{
-                    this.artist = response.artist;
-                    this.alertMessage="El artista se ha creado correctamente";
+                  //  this.artist = response.artist;
+                    this.alertMessage="El artista se ha actualizado correctamente";
                  //   this._router.navigate(['/editar-artista'],response.artist._id);
                 }
             },
@@ -59,6 +94,8 @@ export class ArtistAddComponent implements OnInit{
                 }
               }
         );
+    });
+
         console.log(this.artist);
     }
 
