@@ -44,8 +44,9 @@ function getArtists(req,res){
             if(!artists){
                 res.status(500).send({message: 'No hay artistas!!'});
             }else{
+                console.log("entrem a llistar?");
                 res.status(200).send({total_items: total,
-                Artist:artists});
+                artists:artists});
             }
         }
     });

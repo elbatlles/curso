@@ -4,11 +4,12 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 import{GLOBAL} from '../services/global';
 import {UserService} from '../services/user.service';
 import {ArtistService} from '../services/artist.service';
+import {UploadService} from '../services/upload.service';
 import {Artist} from '../models/artist';
 @Component({
     selector:'artist-edit',
     templateUrl: '../views/artist-add.html',
-    providers:[UserService,ArtistService]
+    providers:[UserService,ArtistService,UploadService]
 })
 
 export class ArtistEditComponent implements OnInit{
@@ -24,7 +25,8 @@ export class ArtistEditComponent implements OnInit{
         private _route: ActivatedRoute,
         private _router: Router,
         private _userService:UserService,
-        private _artistService:ArtistService
+        private _artistService:ArtistService,
+       private _uploadService:UploadService
     ){
         this.titulo="Modificar artista";
         this.identity=this._userService.getIdentity();
@@ -34,7 +36,7 @@ export class ArtistEditComponent implements OnInit{
         this.artist = new Artist('','','');
     }
     ngOnInit(){
-        console.log("Cargando Artist EDIT");
+        console.log("Cargando Artist EDIT11");
         //Llamar al metodo del api para sacar un artista a un artista en base de su id getartist
        
      //GET list artists
@@ -68,7 +70,7 @@ export class ArtistEditComponent implements OnInit{
         });
     }
     onSubmit(){
-        console.log("pasem?");
+        
         this._route.params.forEach((params :Params)=> {
             let id= params['id'];
        
@@ -80,6 +82,16 @@ export class ArtistEditComponent implements OnInit{
                 }else{
                   //  this.artist = response.artist;
                     this.alertMessage="El artista se ha actualizado correctamente";
+                    //subir imagen del artista
+                this._uploadService.makeFileRequest(this.url+"upload-image-artist/"+id,[],this.fileToUpload,this.token,'image')
+                    .then(
+                        (result) =>{
+                            this._router.navigate(['/artistas',1]);
+                        },
+                        (error) => {
+                            console.log(error);
+                        }
+                    ) 
                  //   this._router.navigate(['/editar-artista'],response.artist._id);
                 }
             },
@@ -97,6 +109,10 @@ export class ArtistEditComponent implements OnInit{
     });
 
         console.log(this.artist);
+    }
+    public fileToUpload: Array<File>;
+    fileChangeEvent(fileInput:any){
+        this.fileToUpload=<Array<File>>fileInput.target.files;
     }
 
 }

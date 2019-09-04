@@ -66,3 +66,6 @@ body,html {
 #user_logged .user-image img{
  width: 57px;
 }
+.artist_image_edit{
+    width: 150px;
+}

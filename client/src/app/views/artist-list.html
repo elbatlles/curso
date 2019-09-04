@@ -4,3 +4,10 @@
         Añadir artista
     </a>
 </div>
+<div class="clearfix"> </div>
+<ul class="artist-list" *ngIf="identity">
+    <li *ngFor="let artist of artists" class="col-lg-3 artist-item">
+        {{artist.name}}
+    </li>
+
+</ul>
