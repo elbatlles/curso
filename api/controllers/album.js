@@ -10,7 +10,7 @@ var Song = require('../models/song');
 
 
 function getAlbum(req,res){
-
+    console.log("estem en el album fent get");
     var albumid= req.params.id;
 
     Album.findById(albumid).populate({path:'artist'}).exec((err,album)=>{

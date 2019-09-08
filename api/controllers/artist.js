@@ -34,7 +34,7 @@ function getArtists(req,res){
         var page= 1;
     }
    // var page = req.params.page;
-    var itemsPerPage =3;
+    var itemsPerPage =4;
 
    
     Artist.find().sort('name').paginate(page,itemsPerPage, function(err,artists,total){
@@ -127,7 +127,8 @@ function deleteArtist(req,res){
                                     res.status(404).send({message:'La cancion no a sido eliminada'});
                     
                                 }else{
-                                    res.status(200).send({message:'Artista eliminado'});
+                                 //   res.status(200).send({message:'Artista eliminado'});
+                                 res.status(200).send({ artist: artistremoved});
                                 }
                             }
         

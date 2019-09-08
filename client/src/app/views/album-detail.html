@@ -1,0 +1,14 @@
+<div *ngIf="album">
+    <div id="album-head-card" class="row">
+        <div class="image col-sm-2 image">
+            <img  class="mx-auto d-block img-thumbnail" src="{{url+'get-image-album/'+album.image}}">
+        </div>
+        <div class="col-sm-8 data">
+                <h1>{{album.title}}</h1>
+                <p>{{album.year}}</p>
+                <p>{{album.description}} </p>
+            <a class=" btn btn-sm btn-primary" *ngIf="identity.role=='ROLE_ADMIN'" href="">Añadir canción </a>
+            </div>
+    
+    </div>
+</div>

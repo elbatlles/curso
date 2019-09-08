@@ -4,36 +4,39 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 import{GLOBAL} from '../services/global';
 import {UserService} from '../services/user.service';
 import {ArtistService} from '../services/artist.service';
-import {UploadService} from '../services/upload.service';
+import {AlbumService} from '../services/album.services';
 import {Artist} from '../models/artist';
+import {Album} from '../models/album';
 @Component({
-    selector:'artist-edit',
-    templateUrl: '../views/artist-add.html',
-    providers:[UserService,ArtistService,UploadService]
+    selector:'artist-detail',
+    templateUrl: '../views/artist-detail.html',
+    providers:[UserService,ArtistService,AlbumService]
 })
 
-export class ArtistEditComponent implements OnInit{
+export class ArtistDetailComponent implements OnInit{
     public titulo: string;
     public artist: Artist;
     public identity;
     public token;
     public url: string;
     public alertMessage;
-    public is_edit;
+    public albums: Album[];
+    
 
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
         private _userService:UserService,
         private _artistService:ArtistService,
-       private _uploadService:UploadService
+        private _albumService:AlbumService,
+   
     ){
-        this.titulo="Modificar artista";
+       
         this.identity=this._userService.getIdentity();
         this.token = this._userService.getToken();
         this.url = GLOBAL.url;
-        this.is_edit =true;
-        this.artist = new Artist('','','');
+       
+       
     }
     ngOnInit(){
         console.log("Cargando Artist EDIT11");
@@ -54,6 +57,29 @@ export class ArtistEditComponent implements OnInit{
                         this._router.navigate(['/'])
                     }else{
                         this.artist = response.artist;
+                        //Scar los albums de los artistas
+                        this._albumService.getAlbums(this.token,response.artist._id).subscribe(
+                        response => {
+                             
+                             if(!response.albums){
+                                this.alertMessage = "Este artista no tiene albums";
+
+                            }else{
+                                this.albums = response.albums;
+                                console.log(response.albums);
+                            }
+                        }
+                            ,error => {
+                                var errorMensaje = <any>error;
+                                
+                                if(errorMensaje !=null){
+                                  var body = JSON.parse(error._body);
+                                 // this.alertMessage = body.message;
+                                  console.log(error);
+                                 
+                                }
+                              }
+                            );
                     }
                 },
                 error => {
@@ -69,55 +95,38 @@ export class ArtistEditComponent implements OnInit{
             );
         });
     }
-    onSubmit(){
-        
-        this._route.params.forEach((params :Params)=> {
-            let id= params['id'];
-       
-        this._artistService.editArtist(this.token,id,this.artist).subscribe(
-            response =>{
-              
-                if(!response.artist){
-                    this.alertMessage="Error en el servidor";
-                }else{
-                  //  this.artist = response.artist;
-                  if(!this.fileToUpload){
-                    this._router.navigate(['/artista',response.artist._id]);
-                  }else{
-                    this._uploadService.makeFileRequest(this.url+"upload-image-artist/"+id,[],this.fileToUpload,this.token,'image')
-                    .then(
-                        (result) =>{
-                            this._router.navigate(['/artista',response.artist._id]);
-                        },
-                        (error) => {
-                            console.log(error);
-                        }
-                    )
-                  }
-                    this.alertMessage="El artista se ha actualizado correctamente";
-                    //subir imagen del artista
+
+    public confirmado;   
+    onDeleteConfirm(id){
+        this.confirmado=id;
+       } 
+
+    onCancelAlbum(){
+        this.confirmado=null;
+    }   
+    
+    onDeleteAlbum(id){
+        this._albumService.deleteAlbum(this.token,id).subscribe(
+            response => {
+                 if(!response.albumremoved){
+                     alert("Error en el servidor");
+                 }else{
+                     this.getArtist();
+                 }            
                  
-                 //   this._router.navigate(['/editar-artista'],response.artist._id);
-                }
-            },
-            error => {
+           }
+
+            ,error => {
                 var errorMensaje = <any>error;
                 
                 if(errorMensaje !=null){
                   var body = JSON.parse(error._body);
-                  this.alertMessage = body.message;
+                 // this.alertMessage = body.message;
                   console.log(error);
                  
                 }
               }
         );
-    });
-
-        console.log(this.artist);
-    }
-    public fileToUpload: Array<File>;
-    fileChangeEvent(fileInput:any){
-        this.fileToUpload=<Array<File>>fileInput.target.files;
     }
 
 }

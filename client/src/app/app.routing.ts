@@ -7,9 +7,13 @@ import {UserEditComponent} from './components/user-edit.component';
 import {ArtistListComponent} from './components/artist-list-component'
 import {ArtistAddComponent} from './components/artist-add.component'
 import {ArtistEditComponent} from './components/artist-edit.component'
-
+import {ArtistDetailComponent} from './components/artist-detail.component'
 //importHome
 import {HomeComponent} from './components/home.component'
+//import albums
+import {AlbumAddComponent} from './components/album-add.component'
+import {AlbumEditComponent} from './components/album-edit.component'
+import {AlbumDetailComponent} from './components/album-detail.component'
 const appRoutes : Routes = [
    // {path:'',redirectTo:'artists/1',pathMatch:'full'},
     {path:'',component:HomeComponent},
@@ -17,8 +21,13 @@ const appRoutes : Routes = [
     {path: 'editar-artista/:id',component: ArtistEditComponent},
     {path: 'artistas/:page',component: ArtistListComponent},
    // {path: '',component: ArtistListComponent},
+   {path: 'crear-album/:artist',component:AlbumAddComponent },
+   {path: 'editar-album/:album',component:AlbumEditComponent },
+   {path: 'album/:id',component:AlbumDetailComponent },
     {path: 'mis-datos',component: UserEditComponent},
+    {path: 'artista/:id',component: ArtistDetailComponent},
     {path: '**',component: HomeComponent},
+    
    
 ];
 
