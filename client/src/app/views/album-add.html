@@ -1,4 +1,4 @@
-
+<div   *ngIf="identity && identity.role=='ROLE_ADMIN'">
 <div class="col-lg-6">
 <h1>{{titulo}}</h1>
 
@@ -37,4 +37,5 @@
                  </div> 
              <input class="btn btn-success" type="submit" value="{{titulo}}" [disabled]="!formAlbum.form.valid" />
 </form>
+</div>
 </div>

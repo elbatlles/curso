@@ -51,7 +51,7 @@ function saveSong(req,res){
 
 function getSongs(req,res){
     var albumId = req.params.id;
-
+    console.log("entreeeeeeem?");
     if(!albumId){
         var find = Song.find({}).sort('number');
 
@@ -71,6 +71,7 @@ function getSongs(req,res){
                 if(!songs){
                     res.status(404).send({message: 'No hay canciones'});
                 }else{
+                   
                     res.status(200).send({songs});
                 }
             }

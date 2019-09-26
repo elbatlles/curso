@@ -54,8 +54,8 @@
 
 <div [hidden]="!identity"  class="col-lg-11 central  "> 
     <router-outlet></router-outlet>
- 
-
+ <div style="margin-top: 15%;" class="clearfix"></div>
+  <player *ngIf="identity" class="player"></player>
   
 
 </div>

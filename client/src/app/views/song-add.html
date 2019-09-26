@@ -1,0 +1,50 @@
+<div class="col-lg-8" *ngIf="identity && identity.role=='ROLE_ADMIN'">
+<h1>{{titulo}}</h1>
+
+<div *ngIf="alertMessage">
+        <div class="alert alert-info" role="alert">
+           {{alertMessage}}
+          </div>
+       </div>
+
+       
+<form  #formSong="ngForm" (ngSubmit)="onSubmit()">
+     
+        <label>Titulo</label>
+        <input class="form-control" required type="text" #name="ngModel" name="name" [(ngModel)]="song.name">
+     <span *ngIf="!name.valid && name.touched">
+        El titulo es obligatorio
+     </span>
+     <br />
+     <label>Número</label>
+     <input class="form-control" required type="text" #number="ngModel" name="number" [(ngModel)]="song.number">
+  <span *ngIf="!number.valid && number.touched">
+     El número  de la canción es obligatorio
+  </span>
+   
+  <br />
+
+<label>Duración</label>
+<input type="text"  class="form-control" required type="text" #duration="ngModel"  name="duration"   [(ngModel)]="song.duration">
+<span *ngIf="!duration.valid && duration.touched">
+   La duración es obligatoria
+  </span>
+ 
+<div  *ngIf="is_edit" class="">
+<div class="song_file_for_edit" *ngIf="song.file && song.file !='null'">
+<audio controls>
+  <source src="{{url+ 'get-song-file/'+song.file}}" type="audio/mpeg" />
+     El navegador web no soporta la reproducción de audio
+
+  </audio>
+</div>
+ <label>Sube el fichero de audio</label>
+  <input type="file" placeholder="Subir el fichero..." (change)="fileChangeEvent($event)">
+</div>  
+
+          <br />  
+        
+    
+    <input class="btn btn-success" type="submit" value="{{titulo}}" [disabled]="!formSong.form.valid">
+</form>
+</div>

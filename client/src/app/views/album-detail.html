@@ -5,10 +5,38 @@
         </div>
         <div class="col-sm-8 data">
                 <h1>{{album.title}}</h1>
+                <p> <strong>{{album.artist.name}}</strong> </p>
                 <p>{{album.year}}</p>
                 <p>{{album.description}} </p>
-            <a class=" btn btn-sm btn-primary" *ngIf="identity.role=='ROLE_ADMIN'" href="">Añadir canción </a>
+                 
+            <a [routerLink]="[ '/crear-tema', album._id ]" class=" btn btn-sm btn-primary" *ngIf="identity.role=='ROLE_ADMIN'" href="">Añadir canción </a>
             </div>
     
+    </div>
+    <div class="clearfix"></div>
+    <div id="galley-songs" *ngIf="songs">
+        <ul id="songs-list">
+            <li *ngFor="let song of songs" class="song-item">
+                <div class="title">
+                    <a class="btn btn-success"  (click)="startPlayer(song)">
+                        <span class="fas fa-play"></span>
+                            
+                    </a>
+                {{song.number+'. '+song.name+'-'+song.duration}}  
+                <p class="butons" [hidden]="confirmado==song._id" *ngIf="identity && identity.role=='ROLE_ADMIN'">
+                    <a [routerLink]="['/editar-tema',song._id]" class="btn btn-warning"  >Editar </a>
+                    <a (click)="onDeleteConfirm(song._id)" class="btn btn-danger"  >Borrar </a>
+                </p>  
+                
+                <div class="butons " *ngIf="confirmado==song._id">
+                        
+                                <a  (click)="onDeleteSong(song._id)" class="btn btn-danger"  >Aceptar </a>
+                                <a (click)="onCancelSong()" class="btn btn-primary"  >cancelar </a>
+                             
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            </li>
+        </ul>    
     </div>
 </div>

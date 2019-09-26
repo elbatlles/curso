@@ -14,6 +14,9 @@ import {HomeComponent} from './components/home.component'
 import {AlbumAddComponent} from './components/album-add.component'
 import {AlbumEditComponent} from './components/album-edit.component'
 import {AlbumDetailComponent} from './components/album-detail.component'
+//Import song
+import {SongAddComponent} from './components/song-add.component'
+import {SongEditComponent} from './components/song-edit.components'
 const appRoutes : Routes = [
    // {path:'',redirectTo:'artists/1',pathMatch:'full'},
     {path:'',component:HomeComponent},
@@ -26,6 +29,8 @@ const appRoutes : Routes = [
    {path: 'album/:id',component:AlbumDetailComponent },
     {path: 'mis-datos',component: UserEditComponent},
     {path: 'artista/:id',component: ArtistDetailComponent},
+    {path: 'crear-tema/:album',component: SongAddComponent},
+    {path: 'editar-tema/:id',component: SongEditComponent},
     {path: '**',component: HomeComponent},
     
    
